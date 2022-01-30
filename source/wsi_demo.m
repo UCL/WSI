@@ -1,5 +1,5 @@
 function wsi_demo
-% Whole Slide Image Demo
+% WSI_DEMO Whole Slide Image Demo
 %
 % WSI files can contain images at different resolution levels, as well as
 % images of the whole slide (including label) and a map.
