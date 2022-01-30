@@ -1,4 +1,4 @@
 # WSI
 Whole Slide Imaging
 
-See comments in wsi_demo.
+See comments in source/wsi_demo.m
