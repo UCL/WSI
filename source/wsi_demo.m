@@ -154,7 +154,7 @@ end
 
 % Following uses a fixed resolution image, rather than the bigimageshow
 % Find level with a displayable resolution
-approx_pix = 19000 * 17000 ;   % 19000 * 17000 is manageable on Mac with large RAM
+approx_pix = 10000 * 10000 ;   % 19000 * 17000 is manageable on Mac with large RAM
 [~,jDisp] = min(abs(nPixels_FL - approx_pix)) ;  % jDisp is file level to display
 
 bLevel = jfile2bim(jDisp(1)) ;
@@ -172,7 +172,9 @@ np = PS_MR_HW_mm ./ PS_bL_HW_mm ;       % number of histo pixels in MR
 disp("Rectangle ROI: " + PS_MR_HW_mm(1)+" x "+ PS_MR_HW_mm(2)+ " mm, "+np(1)+" x "+np(2)+" pixels")
 
 rr = drawrectangle('Position', [ 0 0 np(2) np(1)], ...
-    'InteractionsAllowed','translate', 'Rotatable',true);
+    'InteractionsAllowed','translate', 'Rotatable',false,...
+    'LabelAlpha',0.4,'FaceAlpha',0.1);
+rr.ContextMenu = histoCM ;
 
 % Create a "lumen" mask from luminosity using L*a*b space
 %  No white point correction applied here
@@ -181,7 +183,10 @@ thresh = graythresh(labx(:,:,1)) ; % find the lumen-tissue threshold
 bwlumen = zeros(size(cim,[1 2])) ;     % make lumen mask
 bwlumen(labx(:,:,1)>thresh)  = 1 ;
 
-rr.UserData = bwlumen ;  % Store with roi for callback use
+UD.bwlumen = bwlumen ;
+UD.PS_bL_HW_mm = PS_bL_HW_mm ;
+
+rr.UserData = UD ;  % Store with roi for callback use
 
 addlistener(rr,'ROIMoved',@roievents);
 
@@ -192,7 +197,8 @@ end
 function roievents(src,~)
 % ROIEVENTS Computes LWF when roi has been moved
     roi_mask = src.createMask ;
-    linroi = roi_mask.*src.UserData ;  % lumen within roi mask
+    UD = src.UserData ;
+    linroi = roi_mask .* UD.bwlumen ;  % lumen within roi mask
 
     src.Label = ['LWF ',num2str(sum(linroi(:)/sum(roi_mask(:))))] ;
     %disp(['LWF ',num2str(sum(linroi(:)/sum(roi_mask(:))))])
