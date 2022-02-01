@@ -1,10 +1,10 @@
 # Whole Slide Imaging (WSI)
-MATLAB code for reading histology images.
+MATLAB code for handling histology whole slide images.
 
-[source/wsi_demo.m](source/wsi_demo.m) shows example reading of histology file with multiple resolution levels
-Code compares levels after reading by blockedImage and the original histology file.
+[source/wsi_demo.m](source/wsi_demo.m) shows an example of reading a histology file with multiple resolution levels.
+Code analyses the order of the resolution levels after being read in by MATLAB's blockedImage.
 
-Example of overlaying an ROI on one Resolution Level and getting image parameters.
+Example of overlaying an ROI on one Resolution Level, setting the ROI context menu to control the ROI and displaying an image parameter.
 ![wsi_demo.png](/docs/wsi_demo.png)
 
 For example NDPI files see: https://openslide.org/formats/hamamatsu/ 
