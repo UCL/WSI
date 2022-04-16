@@ -1,4 +1,8 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6465073.svg)](https://doi.org/10.5281/zenodo.6465073)
+
 # Whole Slide Imaging (WSI)
+
+
 MATLAB code for handling histology whole slide images.
 
 [source/wsi_demo.m](source/wsi_demo.m) shows an example of reading a histology file with multiple resolution levels.
