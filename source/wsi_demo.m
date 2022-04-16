@@ -7,16 +7,17 @@ function wsi_demo
 % MATLAB blockedImage can handle the resolution levels in a WSI file, and
 % perform block processing. Blocks are not the same as levels.
 %
-% This demo loads a ndpi file that has been conveted to tiff, presents the
+% This demo loads a ndpi file that has been converted to tiff, presents the
 % overview image if available and a highish resolution image with a
-% rectangular ROI overlaid to simuate an MR voxel. 
-% The ROI can be rotated and moved. A label gives the amount of 'lumen'
-% within the ROI
+% rectangular ROI overlaid to simulate an MR voxel. 
+% The ROI is initially in the top left corner and can be rotated and moved. 
+% A label on the ROI gives the amount of 'lumen' within the ROI.
+% Other functionality is provided by the cntext menu.
 %
 % NDPI
 % ----
-% NDPI format from Hamamatsu is TIFF-like but is best processed externally
-% to create a well-formed tiff before trying to read in MATLAB.
+% NDPI format from Hamamatsu is TIFF-like but before trying to read in 
+% MATLAB is best processed externally to create a well-formed tiff .
 % 
 % ndpitools for conversion to TIFF:
 % https://www.imnc.in2p3.fr/pagesperso/deroulers/software/ndpitools/
@@ -40,11 +41,14 @@ function wsi_demo
 %   Google Health also has some stuff on all this.
 %
 %
-% Data examples available from openslide: 
-%  https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-1.ndpi
+% Data examples available from openslide folder:
+%  https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/
 %
 %
 % Copyright 2022, David Atkinson, University College London
+%
+%
+% See also histoCM
 %
 
 % Choose a WSI file
@@ -173,7 +177,7 @@ disp("Rectangle ROI: " + PS_MR_HW_mm(1)+" x "+ PS_MR_HW_mm(2)+ " mm, "+np(1)+" x
 
 rr = drawrectangle('Position', [ 0 0 np(2) np(1)], ...
     'InteractionsAllowed','translate', 'Rotatable',false,...
-    'LabelAlpha',0.4,'FaceAlpha',0.1);
+    'LabelAlpha',0.4,'FaceAlpha',0.1,'Tag','voxel');
 rr.ContextMenu = histoCM ;
 
 % Create a "lumen" mask from luminosity using L*a*b space
@@ -182,6 +186,11 @@ labx = rgb2lab(cim)/100  ;         % convert to L*a*b space
 thresh = graythresh(labx(:,:,1)) ; % find the lumen-tissue threshold
 bwlumen = zeros(size(cim,[1 2])) ;     % make lumen mask
 bwlumen(labx(:,:,1)>thresh)  = 1 ;
+
+se = strel('disk',2);
+bwlumen = imopen(bwlumen, se) ;
+
+% eshow(bwlumen)
 
 UD.bwlumen = bwlumen ;
 UD.PS_bL_HW_mm = PS_bL_HW_mm ;
