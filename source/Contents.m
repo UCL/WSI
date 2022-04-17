@@ -3,4 +3,4 @@
 % Files
 
 %   wsi_demo - Whole Slide Image Demo
-%   histoCM  - Context menu for voxel on histology images
+%   histoCM  - histoCM Context Menu for a voxel ROI on a histology image

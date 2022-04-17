@@ -1,5 +1,5 @@
 function cmHandle = histoCM
-% histoCM Context Menu for an ROI on a histology image
+% histoCM Context Menu for a voxel ROI on a histology image
 % 
 % Menu offers the following features:
 %  Select if ROI is rotatable, 
@@ -12,6 +12,7 @@ function cmHandle = histoCM
 %  roi_handle.ContextMenu = histoCM ;
 %
 % Copyright 2022, David Atkinson, University College London
+%  Archived on Zenodo: https://doi.org/10.5281/zenodo.6465073
 %
 %  See also wsi_demo
 

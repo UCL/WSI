@@ -46,7 +46,7 @@ function wsi_demo
 %
 %
 % Copyright 2022, David Atkinson, University College London
-%
+%  Archived on Zenodo: https://doi.org/10.5281/zenodo.6465073
 %
 % See also histoCM
 %
