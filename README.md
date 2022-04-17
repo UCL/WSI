@@ -1,7 +1,10 @@
+Releases are archived on Zenodo. Please also use this DOI for citation: 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6465073.svg)](https://doi.org/10.5281/zenodo.6465073)
 
-# Whole Slide Imaging (WSI)
+## Download
+This repo manages all the files in the MATLAB Project. To use the code, only the files in the [source](source) folder are needed. A Toolbox file for easy installation is also provided: [WSI.mltbx](WSI.mltbx) 
 
+# Whole Slide Imaging (WSI)
 
 MATLAB code for handling histology whole slide images.
 
