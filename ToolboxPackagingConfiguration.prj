@@ -5,7 +5,7 @@
     <param.email>D.Atkinson@ucl.ac.uk</param.email>
     <param.company>University College London</param.company>
     <param.summary>Whole Slide Imaging</param.summary>
-    <param.description />
+    <param.description>Whole Slide Imaging for investigation of Luminal Water Fraction</param.description>
     <param.screenshot>/Users/davidatkinson/Desktop/Screenshot 2022-04-16 at 17.03.08.png</param.screenshot>
     <param.version>1.0</param.version>
     <param.output>${PROJECT_ROOT}/WSI.mltbx</param.output>
@@ -43,7 +43,7 @@ resources/_Project/*
 .DS_Store
 CITATION.cff
 LICENSE
-ToolboxPackagingConfiguration.prj
+WSI.mltbx
 docs/.DS_Store
 source/histoCM.asv
 source/wsi_demo.asv</param.exclude.filters>
@@ -52,8 +52,8 @@ source/wsi_demo.asv</param.exclude.filters>
     <param.demosxml />
     <param.apps />
     <param.registered.apps />
-    <param.docs />
-    <param.getting.started.guide />
+    <param.docs>${PROJECT_ROOT}/info.xml</param.docs>
+    <param.getting.started.guide>${PROJECT_ROOT}/doc/GettingStarted.mlx</param.getting.started.guide>
     <param.matlabpath.excludes />
     <param.javaclasspath.excludes />
     <param.exported.on.package>false</param.exported.on.package>
@@ -74,7 +74,9 @@ source/wsi_demo.asv</param.exclude.filters>
     <param.additional.sw.mac.url />
     <param.additional.sw.linux.url />
     <unset>
-      <param.description />
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
       <param.version />
       <param.output />
       <param.products.name />
@@ -86,8 +88,6 @@ source/wsi_demo.asv</param.exclude.filters>
       <param.demosxml />
       <param.apps />
       <param.registered.apps />
-      <param.docs />
-      <param.getting.started.guide />
       <param.matlabpath.excludes />
       <param.javaclasspath.excludes />
       <param.exported.on.package />
@@ -113,7 +113,10 @@ source/wsi_demo.asv</param.exclude.filters>
       <file>${PROJECT_ROOT}/.gitattributes</file>
       <file>${PROJECT_ROOT}/.gitignore</file>
       <file>${PROJECT_ROOT}/README.md</file>
+      <file>${PROJECT_ROOT}/doc</file>
       <file>${PROJECT_ROOT}/docs</file>
+      <file>${PROJECT_ROOT}/helptoc.xml</file>
+      <file>${PROJECT_ROOT}/info.xml</file>
       <file>${PROJECT_ROOT}/resources</file>
       <file>${PROJECT_ROOT}/source</file>
     </fileset.rootfiles>
