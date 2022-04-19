@@ -2,7 +2,7 @@ Releases are automatically archived on Zenodo. The Zenodo Context DOI (for all v
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6465073.svg)](https://doi.org/10.5281/zenodo.6465073)
 
 ## Download
-This repo manages all the files in the MATLAB Project. To use the code, only the files in the [source](source) folder are needed. A Toolbox file for easy installation is also provided: [WSI.mltbx](WSI.mltbx) 
+This repo manages all the files used by a MATLAB Project. To use the code, only the files in the [source](source) folder are needed. Alternatively, a Toolbox file is available for easy installation: [WSI.mltbx](WSI.mltbx) 
 
 # Whole Slide Imaging (WSI)
 
