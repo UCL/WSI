@@ -1,9 +1,29 @@
-cff-version: 1.1.0
-message: "If you use this software, please cite it as below."
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: UCL/WSI Whole Slide Imaging
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
 authors:
-  - family-names: "Atkinson"
-    given-names: "David"
-    orcid: "https://orcid.org/0000-0003-1124-6666"
-title: "UCL/WSI: Whole Slide Imaging"
-version: v1.0.0
-date-released: 2022-04-16
+  - given-names: David
+    family-names: Atkinson
+    email: D.Atkinson@ucl.ac.uk
+    affiliation: University College London
+    orcid: 'https://orcid.org/0000-0003-1124-6666'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.6465073
+    description: Context DOI (for all versions)
+repository-code: 'https://github.com/UCL/WSI'
+abstract: >-
+  MATLAB code for Whole Slide Imaging and assessment
+  of Luminal Fraction
+keywords:
+  - Luminal Water Fraction
+  - WSI
+  - MATLAB
+  - Prostate
+license: Apache-2.0
