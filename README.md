@@ -1,4 +1,4 @@
-Releases are archived on Zenodo. Please also use this DOI for citation: 
+Releases are automatically archived on Zenodo. The Zenodo Context DOI (for all versions) is: 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6465073.svg)](https://doi.org/10.5281/zenodo.6465073)
 
 ## Download
